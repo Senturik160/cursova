@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світ Котів</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff914d, #ff4d6d);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff914d;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://placekitten.com/1200/400') center/cover no-repeat;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .container {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card h3 {
+            margin: 10px;
+        }
+
+        .card p {
+            padding: 0 10px 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #ff914d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1> Світ Котів</h1>
+    <p>Все про милих, пухнастих і незалежних друзів</p>
+</header>
+
+<nav>
+    <a href="#about">Про котів</a>
+    <a href="#breeds">Породи</a>
+    <a href="#fun">Цікаві факти</a>
+</nav>
+
+<section class="hero">
+    <h1>Коти роблять життя кращим ❤️</h1>
+</section>
+
+<div class="container" id="about">
+    <h2>Про котів</h2>
+    <p>
+        Коти — це одні з найпопулярніших домашніх тварин у світі.
+        <br> Вони незалежні,
+        розумні та дуже ласкаві . Деякі з них великі і дуже люблять дітей. Деякі маленькі, але дуже агрисивні, а деякі просто дуже боягузливі. 
+       <br> Але всі дуже гарні і милі. 
+    </p>
+</div>
+
+<div class="container" id="breeds">
+    <h2>Популярні породи</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="https://placekitten.com/300/200">
+            <h3>Британська короткошерста</h3>
+            <p>Спокійні та плюшеві котики з круглими мордочками.</p>
+        </div>
+        <div class="card">
+            <img src="https://placekitten.com/301/200">
+            <h3>Сіамська</h3>
+            <p>Дуже розумні та "балакучі" коти.</p>
+        </div>
+        <div class="card">
+            <img src="https://placekitten.com/302/200">
+            <h3>Мейн-кун</h3>
+            <p>Великі, пухнасті та дуже дружелюбні.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="fun">
+    <h2>Цікаві факти</h2>
+    <ul>
+        <li>Коти сплять до 16 годин на день 😴</li>
+        <li>Вони можуть стрибати у 6 разів вище за свою довжину</li>
+        <li>Коти муркотять, щоб заспокоїтись</li>
+    </ul>
+
+    <button onclick="showFact()">Показати випадковий факт</button>
+    <p id="fact"></p>
+</div>
+
+<footer>
+    <p>© 2026 TTM Invalid — всі права захищені</p>
+</footer>
+
+<script>
+    const facts = [
+        "Коти можуть обертати вуха на 180 градусів!",
+        "У котів більше кісток, ніж у людей.",
+        "Коти не відчувають солодкого смаку.",
+        "Ніс кота унікальний, як відбиток пальця."
+    ];
+
+    function showFact() {
+        const random = Math.floor(Math.random() * facts.length);
+        document.getElementById("fact").innerText = facts[random];
+    }
+</script>
+
+</body>
+</html>
+
